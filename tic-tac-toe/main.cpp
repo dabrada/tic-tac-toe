@@ -1,8 +1,8 @@
 #include <iostream>
 #include "tic_tac_toe.h"
 
-int main(){
-    game Game1;
+int main() {
+    Game Game1;
     std::string prvi, drugi;
     std::cout << "Upisite ime prvog igraca: ";
     std::cin >> prvi;
@@ -12,20 +12,23 @@ int main(){
     Game1.unesiImeIgraca1(prvi);
     Game1.unesiImeIgraca2(drugi);
 
-    while(Game1.provjeraStanjaIgre() == 0){
+    while (Game1.provjeraStanjaIgre() == 0) {
         Game1.ispisPloce();
         Game1.kontrolaIgre();
     }
 
-    if(Game1.provjeraStanjaIgre() == 1 || Game1.provjeraStanjaIgre() == 2){
-        if(Game1.pobjednik() == 1)
+    if (Game1.provjeraStanjaIgre() == 1 || Game1.provjeraStanjaIgre() == 2) {
+        if (Game1.pobjednik() == 1) {
             std::cout << Game1.p1 << " je pobjednik!" <<std::endl;
-        else
+        }
+        else {
             std::cout << Game1.p2 << " je pobjednik!" << std::endl;
+        }
     }
 
-    if(Game1.provjeraStanjaIgre() == 3)
+    if (Game1.provjeraStanjaIgre() == 3) {
         std::cout << "Izjednaceno je!" << std::endl;
-
+    }
+    
     return 0;
 }
